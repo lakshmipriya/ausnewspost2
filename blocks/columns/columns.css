@@ -19,11 +19,11 @@
   display: block;
 }
 
-.hero-container {
+.columns-container {
   position: relative;
 }
 
-.hero-container .herooverlap {
+.columns-container .herooverlap {
   position: absolute;
   top: 260px;
   right: 60px;
