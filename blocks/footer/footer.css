@@ -5,6 +5,18 @@ footer {
   font-size: var(--body-font-size-xs);
 }
 
+/* First row → white */
+footer .section:first-of-type {
+  background: #fff;
+  color: #000;
+}
+
+/* Second row → keep your existing design */
+footer .section:last-of-type {
+  background: #30303c;
+  color: #fff;
+}
+
 /* Inner footer container (matches original site width) */
 footer .footer > div {
   max-width: 900px;               /* ✅ aligns with original */
