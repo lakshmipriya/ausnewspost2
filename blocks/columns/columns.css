@@ -29,7 +29,21 @@
     right: 149px;
     max-width: 374px;
     z-index: 2;
-    border-left: 4px solid red;
+   }
+/* Red line only on first wrapper */
+.herooverlap > div:first-child {
+  border-left: 4px solid red;
+  padding-left: 16px;
+}
+
+/* Optional: if you want line only next to heading */
+.herooverlap h3:first-of-type {
+  margin-top: 0;
+}
+
+/* Ensure button is untouched */
+.herooverlap .button {
+  border: none;
 }
 
 .herooverlap > div {
