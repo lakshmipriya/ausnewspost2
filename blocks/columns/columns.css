@@ -48,14 +48,14 @@
   padding-left: 16px;
 }
 
-columns-container .redleft > div > div:first-child {
+.columns-container .redleft > div > div:first-child {
   border-left: 2px solid #e30613;
   padding-left: 16px;
   display: flex;
   flex-direction: column;
 }
 
-columns-container .redleft > div {
+.columns-container .redleft > div {
   align-items: flex-start;
 }
 
