@@ -5,6 +5,10 @@ footer {
   font-size: var(--body-font-size-xs);
 }
 
+footer .footer > div > .section {
+  width: 100%;
+}
+
 /* First row → white */
 footer .section:first-of-type {
   background: #fff;
