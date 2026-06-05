@@ -394,37 +394,28 @@ function wrapTextNodes(block) {
 function decorateButtons(element) {
   element.querySelectorAll('a').forEach((a) => {
     a.title = a.title || a.textContent;
-
     if (a.href !== a.textContent) {
       const up = a.parentElement;
-      const twoup = up.parentElement;
-
+      const twoup = a.parentElement.parentElement;
       if (!a.querySelector('img')) {
-
-        // ✅ FIXED condition
-        if (
-          up.children.length === 1 &&
-          (up.tagName === 'P' || up.tagName === 'DIV')
-        ) {
-          a.className = 'button';
+        if (up.childNodes.length === 1 && (up.tagName === 'P' || up.tagName === 'DIV')) {
+          a.className = 'button'; // default
           up.classList.add('button-container');
         }
-
         if (
-          up.children.length === 1 &&
-          up.tagName === 'STRONG' &&
-          twoup.children.length === 1 &&
-          twoup.tagName === 'P'
+          up.childNodes.length === 1
+          && up.tagName === 'STRONG'
+          && twoup.childNodes.length === 1
+          && twoup.tagName === 'P'
         ) {
           a.className = 'button primary';
           twoup.classList.add('button-container');
         }
-
         if (
-          up.children.length === 1 &&
-          up.tagName === 'EM' &&
-          twoup.children.length === 1 &&
-          twoup.tagName === 'P'
+          up.childNodes.length === 1
+          && up.tagName === 'EM'
+          && twoup.childNodes.length === 1
+          && twoup.tagName === 'P'
         ) {
           a.className = 'button secondary';
           twoup.classList.add('button-container');
