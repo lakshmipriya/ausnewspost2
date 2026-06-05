@@ -30,26 +30,29 @@
     max-width: 374px;
     z-index: 2;
    }
-/* Red line only on first wrapper */
-.herooverlap > div:first-child {
-  border-left: 4px solid red;
-  padding-left: 16px;
+.herooverlap > div {
+  padding: 24px 24px 24px 0; /* remove left padding */
 }
 
-/* Optional: if you want line only next to heading */
-.herooverlap h3:first-of-type {
-  margin-top: 0;
-}
-
-/* Ensure button is untouched */
-.herooverlap .button {
-  border: none;
+.herooverlap > div > div:first-child {
+  margin-left: 24px;  /* push content in */
 }
 
 .herooverlap > div {
   background: #fff;
   padding: 24px;
   border-radius: 12px;
+}
+
+.herooverlap > div > div:first-child {
+  border-left: 4px solid #e30613;
+  padding-left: 16px;
+}
+
+
+/* Ensure button is untouched */
+.herooverlap .button {
+  border: none;
 }
 
 @media (width >= 900px) {
