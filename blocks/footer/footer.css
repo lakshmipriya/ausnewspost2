@@ -1,7 +1,6 @@
 /* Footer base */
 footer {
-  background: #30303c;
-  color: #fff;
+ 
   font-size: var(--body-font-size-xs);
 }
 
