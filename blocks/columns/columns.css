@@ -65,6 +65,87 @@
   border: none;
 }
 
+/* ===== 3 COLUMN LAYOUT BASE ===== */
+.columns.redleft.columns-3-cols > div {
+  display: flex;
+  gap: 40px;
+  align-items: stretch;
+}
+
+/* ===== APPLY RED LEFT BORDER ONLY FOR FIRST COLUMN ===== */
+.columns.redleft.columns-3-cols > div > div:first-child {
+  flex: 1;
+  padding-left: 20px;
+  border-left: 4px solid #e31837;
+}
+
+/* ===== KEEP OTHER COLUMNS NORMAL ===== */
+.columns.redleft.columns-3-cols > div > div {
+  flex: 1;
+}
+
+/* ===== IMAGE (MIDDLE COLUMN) ===== */
+.columns.redleft.columns-3-cols .columns-img-col img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* ===== RIGHT COLUMN (QUICK LINKS CARD) ===== */
+.columns.redleft.columns-3-cols > div > div:last-child {
+  background: #f5f5f5;
+  padding: 24px;
+  border-radius: 12px;
+}
+
+/* ===== QUICK LINKS TITLE ===== */
+.columns.redleft.columns-3-cols > div > div:last-child strong {
+  display: block;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* ===== TABLE ROW STYLE ===== */
+.columns.redleft.columns-3-cols > div > div:last-child tr {
+  border-bottom: 1px solid #ddd;
+}
+
+/* ===== EACH LINK ROW ===== */
+.columns.redleft.columns-3-cols > div > div:last-child td {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+  font-size: 16px;
+  cursor: pointer;
+  gap: 10px;
+}
+
+/* ===== LEFT SIDE (TEXT + ICON) WRAP FIX ===== */
+.columns.redleft.columns-3-cols > div > div:last-child td::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  background: url('/icons/external-link.svg') no-repeat center;
+  background-size: contain;
+  margin-right: 10px;
+}
+
+/* ===== RIGHT ARROW ===== */
+.columns.redleft.columns-3-cols > div > div:last-child td::after {
+  content: "›";
+  color: #e31837;
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: auto;
+}
+
+/* ===== HOVER EFFECT ===== */
+.columns.redleft.columns-3-cols > div > div:last-child td:hover {
+  color: #e31837;
+}
+
 @media (width >= 900px) {
   .columns > div {
     align-items: center;
