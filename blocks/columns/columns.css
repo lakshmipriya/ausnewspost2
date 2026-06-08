@@ -1,4 +1,3 @@
-/* ===== BASE COLUMNS ===== */
 .columns > div {
   display: flex;
   flex-direction: column;
@@ -20,33 +19,62 @@
   display: block;
 }
 
-/* ===== RED LEFT ONLY (FIRST COLUMN) ===== */
+.columns-container {
+  position: relative;
+}
+
+.columns-container .herooverlap {
+  position: absolute;
+  top: -473px;
+  right: 75px;
+  max-width: 500px;
+  z-index: 2;
+}
+
+.herooverlap > div {
+  padding: 24px 24px 24px 0;
+}
+
+.herooverlap > div > div:first-child {
+  margin-left: 24px;
+}
+
+.herooverlap > div {
+  background: #fff;
+  border-radius: 12px;
+}
+
+.herooverlap > div > div:first-child {
+  border-left: 2px solid #e30613;
+  padding-left: 16px;
+}
+
 .columns-container .redleft > div > div:first-child {
   border-left: 2px solid #e30613;
   padding-left: 16px;
+  display: flex;
+  flex-direction: column;
 }
 
 .columns-container .redleft > div {
   align-items: flex-start;
 }
 
-/* ===== DESKTOP LAYOUT ===== */
-@media (width >= 900px) {
-  .columns > div {
-    flex-direction: row;
-    align-items: stretch;
-    gap: 40px;
-  }
-
-  .columns > div > div {
-    flex: 1;
-    order: unset;
-  }
+/* Ensure button is untouched */
+.herooverlap .button {
+  border: none;
 }
 
-/* ===== 3 COLUMN SPECIFIC ===== */
+/* ===== 3 COLUMN LAYOUT BASE ===== */
 .columns.redleft.columns-3-cols > div {
+  display: flex;
   gap: 40px;
+  align-items: stretch;
+}
+
+/* ===== KEEP OTHER COLUMNS NORMAL ===== */
+.columns.redleft.columns-3-cols > div > div {
+  flex: 1;
 }
 
 /* ===== IMAGE (MIDDLE COLUMN) ===== */
@@ -57,7 +85,7 @@
   border-radius: 12px;
 }
 
-/* ===== RIGHT COLUMN (QUICK LINKS CARD) ===== */
+/* ===== ✅ FIXED 3RD COLUMN ONLY ===== */
 .columns.redleft.columns-3-cols > div > div:last-child {
   background: #ffffff;
   padding: 24px;
@@ -65,20 +93,20 @@
   border: 1px solid #e5e5e5; /* full light border */
 }
 
-/* ===== QUICK LINKS TITLE ===== */
+/* title */
 .columns.redleft.columns-3-cols > div > div:last-child strong {
   display: block;
-  font-size: 22px;
+  font-size: 24px;
   margin-bottom: 16px;
 }
 
-/* ===== TABLE RESET ===== */
+/* table full width */
 .columns.redleft.columns-3-cols > div > div:last-child table {
   width: 100%;
   border-collapse: collapse;
 }
 
-/* ===== ROW DIVIDERS ===== */
+/* row divider lines */
 .columns.redleft.columns-3-cols > div > div:last-child tr {
   border-bottom: 1px solid #e6e6e6;
 }
@@ -87,7 +115,7 @@
   border-bottom: none;
 }
 
-/* ===== EACH LINK ROW ===== */
+/* row layout */
 .columns.redleft.columns-3-cols > div > div:last-child td {
   display: flex;
   align-items: center;
@@ -96,7 +124,7 @@
   cursor: pointer;
 }
 
-/* ===== LEFT ICON ===== */
+/* left icon */
 .columns.redleft.columns-3-cols > div > div:last-child td::before {
   content: "";
   width: 16px;
@@ -107,7 +135,7 @@
   flex-shrink: 0;
 }
 
-/* ===== RIGHT ARROW ===== */
+/* right arrow */
 .columns.redleft.columns-3-cols > div > div:last-child td::after {
   content: "›";
   color: #e31837;
@@ -116,7 +144,20 @@
   margin-left: auto;
 }
 
-/* ===== HOVER ===== */
+/* hover */
 .columns.redleft.columns-3-cols > div > div:last-child td:hover {
   color: #e31837;
+}
+
+@media (width >= 900px) {
+  .columns > div {
+    align-items: center;
+    flex-direction: unset;
+    gap: 24px;
+  }
+
+  .columns > div > div {
+    flex: 1;
+    order: unset;
+  }
 }
