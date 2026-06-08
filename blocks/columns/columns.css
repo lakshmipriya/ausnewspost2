@@ -25,9 +25,9 @@
 
 .columns-container .herooverlap {
   position: absolute;
-    top: -358px;
-    right: 149px;
-    max-width: 374px;
+    top: -473px;
+    right: 75px;
+    max-width: 500px;
     z-index: 2;
    }
 .herooverlap > div {
