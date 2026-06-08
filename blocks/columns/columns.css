@@ -1,3 +1,4 @@
+/* ===== BASE COLUMNS ===== */
 .columns > div {
   display: flex;
   flex-direction: column;
@@ -19,64 +20,33 @@
   display: block;
 }
 
-.columns-container {
-  position: relative;
-}
-
-.columns-container .herooverlap {
-  position: absolute;
-    top: -473px;
-    right: 75px;
-    max-width: 500px;
-    z-index: 2;
-   }
-.herooverlap > div {
-  padding: 24px 24px 24px 0; /* remove left padding */
-}
-
-.herooverlap > div > div:first-child {
-  margin-left: 24px;  /* push content in */
-}
-
-.herooverlap > div {
-  background: #fff;
-  border-radius: 12px;
-}
-
-.herooverlap > div > div:first-child {
-  border-left: 2px solid #e30613;
-  padding-left: 16px;
-}
-
+/* ===== RED LEFT ONLY (FIRST COLUMN) ===== */
 .columns-container .redleft > div > div:first-child {
   border-left: 2px solid #e30613;
   padding-left: 16px;
-  display: flex;
-  flex-direction: column;
 }
 
 .columns-container .redleft > div {
   align-items: flex-start;
 }
 
+/* ===== DESKTOP LAYOUT ===== */
+@media (width >= 900px) {
+  .columns > div {
+    flex-direction: row;
+    align-items: stretch;
+    gap: 40px;
+  }
 
-/* Ensure button is untouched */
-.herooverlap .button {
-  border: none;
+  .columns > div > div {
+    flex: 1;
+    order: unset;
+  }
 }
 
-/* ===== 3 COLUMN LAYOUT BASE ===== */
+/* ===== 3 COLUMN SPECIFIC ===== */
 .columns.redleft.columns-3-cols > div {
-  display: flex;
   gap: 40px;
-  align-items: stretch;
-}
-
-
-
-/* ===== KEEP OTHER COLUMNS NORMAL ===== */
-.columns.redleft.columns-3-cols > div > div {
-  flex: 1;
 }
 
 /* ===== IMAGE (MIDDLE COLUMN) ===== */
@@ -92,67 +62,61 @@
   background: #ffffff;
   padding: 24px;
   border-radius: 12px;
-  border-bottom: 0.5px solid #dcdcdc;
+  border: 1px solid #e5e5e5; /* full light border */
 }
 
 /* ===== QUICK LINKS TITLE ===== */
 .columns.redleft.columns-3-cols > div > div:last-child strong {
   display: block;
-  font-size: 24px;
-  margin-bottom: 20px;
+  font-size: 22px;
+  margin-bottom: 16px;
 }
 
-/* ===== TABLE ROW STYLE ===== */
+/* ===== TABLE RESET ===== */
+.columns.redleft.columns-3-cols > div > div:last-child table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* ===== ROW DIVIDERS ===== */
 .columns.redleft.columns-3-cols > div > div:last-child tr {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.columns.redleft.columns-3-cols > div > div:last-child tr:last-child {
+  border-bottom: none;
 }
 
 /* ===== EACH LINK ROW ===== */
 .columns.redleft.columns-3-cols > div > div:last-child td {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 14px 0;
+  padding: 16px 0;
   font-size: 16px;
   cursor: pointer;
-  gap: 10px;
 }
 
-/* ===== LEFT SIDE (TEXT + ICON) WRAP FIX ===== */
+/* ===== LEFT ICON ===== */
 .columns.redleft.columns-3-cols > div > div:last-child td::before {
   content: "";
   width: 16px;
   height: 16px;
   background: url('/icons/external-link.svg') no-repeat center;
   background-size: contain;
-  margin-right: 10px;
-     align-items: right;
+  margin-right: 12px;
+  flex-shrink: 0;
 }
 
 /* ===== RIGHT ARROW ===== */
 .columns.redleft.columns-3-cols > div > div:last-child td::after {
   content: "›";
   color: #e31837;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bold;
   margin-left: auto;
-      align-items: right;
 }
 
-/* ===== HOVER EFFECT ===== */
+/* ===== HOVER ===== */
 .columns.redleft.columns-3-cols > div > div:last-child td:hover {
   color: #e31837;
-}
-
-@media (width >= 900px) {
-  .columns > div {
-    align-items: center;
-    flex-direction: unset;
-    gap: 24px;
-  }
-
-  .columns > div > div {
-    flex: 1;
-    order: unset;
-  }
 }
