@@ -1,6 +1,8 @@
 /* Footer base */
 footer {
   font-size: var(--body-font-size-xs);
+     background: #fff;
+  color: #000;
 }
 
 /* ✅ Make sections FULL WIDTH */
