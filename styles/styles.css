@@ -295,3 +295,15 @@ main .section.highlight {
   margin: 0;
   padding: 40px 0;
 }
+main > .section:first-of-type .default-content-wrapper {
+  max-width: 100%;
+  padding: 0;
+}
+
+main > .section:first-of-type picture,
+main > .section:first-of-type img {
+  width: 100%;
+  height: 500px; /* adjust height */
+  object-fit: cover;
+  display: block;
+}
