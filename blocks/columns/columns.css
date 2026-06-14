@@ -49,6 +49,17 @@
   padding-left: 16px;
 }
 
+@media (max-width: 768px) {
+  .columns-container .herooverlap {
+    left: 50%;
+    right: auto;     
+    transform: translateX(-50%);
+    max-width: 90%;   
+      top: -300px; 
+  }
+}
+
+
 .columns-container .redleft > div > div:first-child {
   border-left: 2px solid #e30613;
   padding-left: 16px;
