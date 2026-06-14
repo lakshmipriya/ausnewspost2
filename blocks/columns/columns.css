@@ -54,8 +54,9 @@
     left: 50%;
     right: auto;     
     transform: translateX(-50%);
-    max-width: 90%;   
-      top: -300px; 
+    max-width: 90%; 
+      width:90%;
+      top: -530px; 
   }
 }
 
